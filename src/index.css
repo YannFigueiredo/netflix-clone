@@ -8,6 +8,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  color: white;
+  background-color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
