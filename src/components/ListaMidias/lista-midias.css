@@ -1,3 +1,7 @@
+.lista-midias{
+    margin-top: 20px;
+}
+
 .lista-midias--titulo{
     font-size: 1.3em;
 }
@@ -30,7 +34,7 @@
 .midia--capa img{
     width: 100%;
     transform: scale(0.92);
-    transition: all ease .5s;
+    transition: all ease .7s;
 }
 
 .midia--capa:hover ~ .midia--detalhes{
