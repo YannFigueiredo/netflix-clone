@@ -1,0 +1,67 @@
+.lista-midias--titulo{
+    font-size: 1.3em;
+}
+
+.lista-midias--area-midia{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+.lista-midias--midia{
+    background-color: black;
+}
+
+.midia--capa{
+    width: 200px;
+    cursor: pointer;
+}
+
+.midia--detalhes{
+    opacity: 0;
+}
+
+.midia--titulo{
+    font-size: 1em;
+}
+
+.midia--capa img{
+    width: 100%;
+    transform: scale(0.92);
+    transition: all ease .5s;
+}
+
+.midia--capa:hover ~ .midia--detalhes{
+    opacity: 1;
+}
+
+.midia--capa:hover img{
+    transform: scale(1);
+}
+
+.area-btn-slide{
+    background-color: rgba(0, 0, 0, .6);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    padding: 0 8px;
+}
+
+.area-btn-voltar{
+    left: 0;
+}
+
+.area-btn-avancar{
+    right: 0;
+}
+
+.btn-voltar, .btn-avancar{
+    font-size: 40px;
+    font-weight: 700;
+}
