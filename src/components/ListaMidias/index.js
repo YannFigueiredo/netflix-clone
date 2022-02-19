@@ -6,15 +6,26 @@ export default function ListaMidias({ lista }){
     const areaMidia = useRef(null);
     const btnVoltar = useRef(null);
     const btnAvancar = useRef(null);
+    const definirDisplayBtn = () => {
+        if(areaMidia.current.scrollLeft === 0){
+            btnVoltar.current.style.display = 'none';
+        }else{
+            btnVoltar.current.style.display = 'flex';
+        }
+
+        if(areaMidia.current.scrollLeft === areaMidia.scrollWidth){
+            btnAvancar.current.style.display = 'none';
+        }else{
+            btnAvancar.current.style.display = 'flex';
+        }
+    };
 
     useEffect(() => {
-        function eventoScroll(){
-            areaMidia.current.addEventListener('scroll', () => {
-                console.log('olaaa');
-             })
-        }
+        definirDisplayBtn();
         
-        eventoScroll();
+        areaMidia.current.addEventListener('scroll', () => {
+            definirDisplayBtn();
+        });
     }, []);
 
     return(
