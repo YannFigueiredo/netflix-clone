@@ -28,12 +28,29 @@ export default function Header(){
     }, []);
 
     useEffect(() => {
+        let intervaloPerfil;
+        let intervaloConfig;
+
         perfilAtivo.current.addEventListener('mouseover', () => {
-            areaConfig.current.style.display = 'inline-block';
+            clearInterval(intervaloConfig);
+            areaConfig.current.style.height = 'auto';
         });
 
         perfilAtivo.current.addEventListener('mouseleave', () => {
-            areaConfig.current.style.display = 'none';
+            intervaloPerfil = setTimeout(() => {
+                areaConfig.current.style.height = '0px';
+            }, 1000);
+        });
+
+        areaConfig.current.addEventListener('mouseover', () => {
+            clearInterval(intervaloPerfil);
+            areaConfig.current.style.height = 'auto';
+        });
+
+        areaConfig.current.addEventListener('mouseleave', () => {
+            intervaloConfig = setTimeout(() => {
+                areaConfig.current.style.height = '0px';
+            }, 1000);
         });
     }, []);
 

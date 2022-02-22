@@ -1,8 +1,8 @@
 import { createContext, useState, useEffect } from 'react';
-import avatarpadrao1 from '../assets/perfil-padrao1.png';
+import avatarpadrao1 from '../assets/perfil-padrao1.jpg';
 import avatarpadrao2 from '../assets/perfil-padrao2.jpg';
 import avatarpadrao3 from '../assets/perfil-padrao3.jpg';
-import avatarpadrao4 from '../assets/perfil-padrao4.jpg';
+import avatarpadrao4 from '../assets/perfil-padrao4.png';
 import avatarpadrao5 from '../assets/perfil-padrao5.jpg';
 
 export const UsuariosContext = createContext();

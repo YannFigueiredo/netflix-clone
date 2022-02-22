@@ -70,6 +70,14 @@
     border-radius: 5px;
 }
 
+.header-principal--btn-expandir{
+    transition: all ease .3s;
+}
+
+.header-principal--perfil-ativo:hover .header-principal--btn-expandir{
+    transform: rotate(-180deg);
+}
+
 .header-principal--config{
     position: absolute;
     top: 0;
@@ -77,7 +85,8 @@
     z-index: 100;
     background-color: rgba(0, 0, 0, .8);
     margin-top: 38px;
-    display: none;
+    height: 0px;
+    overflow: hidden;
 }
 
 .header-principal--perfil-inativo{
@@ -86,6 +95,8 @@
     align-items: center;
     cursor: pointer;
     margin-bottom: 8px;
+    padding-right: 8px;
+    padding-left: 8px;
 }
 
 .header-principal--perfil-inativo:hover{
@@ -102,6 +113,8 @@
     align-items: center;
     cursor: pointer;
     margin-bottom: 8px;
+    padding-right: 8px;
+    padding-left: 8px;
 }
 
 .header-principal--gerenciar-perfil:hover{
