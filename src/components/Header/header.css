@@ -1,0 +1,114 @@
+.header-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header-principal--area-navegacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.header-principal--logo{
+    width: 115px;
+    margin-right: 50px;
+}
+
+.header-principal--logo img{
+    width: 100%;
+}
+
+.header-principal--menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+}
+
+.header-principal--menu a{
+    text-decoration: none;
+    color: white;
+    transition: all ease .4s;
+}
+
+.header-principal--menu a:hover{
+    color: rgb(206, 203, 203);
+}
+
+.header-principal--menu li{
+    list-style-type: none;
+}
+
+.header-principal--area-infos{
+    display: flex;
+    font-size: 0.9em;
+    background-color: rgba(0, 0, 0, .8);
+    position: relative;
+    width: 200px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-principal--perfil-ativo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.header-principal--avatar-perfil{
+    width: 33px;
+}
+
+.header-principal--avatar-perfil img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.header-principal--config{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .8);
+    margin-top: 38px;
+    display: none;
+}
+
+.header-principal--perfil-inativo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.header-principal--perfil-inativo:hover{
+    text-decoration: underline;
+}
+
+.header-principal--config .header-principal--avatar-perfil{
+    width: 30px;
+    margin-right: 6px;
+}
+
+.header-principal--gerenciar-perfil{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.header-principal--gerenciar-perfil:hover{
+    text-decoration: underline;
+}
+
+.header-principal--btn-gerenciar{
+    margin-right: 15px;
+    font-size: 1.4em;
+}
