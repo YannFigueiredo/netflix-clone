@@ -1,10 +1,14 @@
 .lista-midias{
     margin-top: 20px;
-    position: relative;
+    
 }
 
 .lista-midias--titulo{
     font-size: 1.3em;
+}
+
+.container-auxiliar{
+    position: relative;
 }
 
 .lista-midias--area-midia{
@@ -16,7 +20,7 @@
 }
 
 .lista-midias--area-midia:hover .area-btn-slide{
-    height: 100%;
+    height: 87%;
 }
 
 .lista-midias--midia{
@@ -51,10 +55,9 @@
 }
 
 .area-btn-slide{
-    background-color: red;
+    background-color: rgba(0, 0, 0, .7);
     position: absolute;
     top: 0;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
