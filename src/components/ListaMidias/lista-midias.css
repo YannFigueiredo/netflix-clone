@@ -1,5 +1,6 @@
 .lista-midias{
     margin-top: 20px;
+    position: relative;
 }
 
 .lista-midias--titulo{
@@ -11,7 +12,11 @@
     flex-wrap: nowrap;
     overflow: hidden;
     margin-top: 10px;
-    position: relative;
+    scroll-behavior: smooth;
+}
+
+.lista-midias--area-midia:hover .area-btn-slide{
+    height: 100%;
 }
 
 .lista-midias--midia{
@@ -46,7 +51,7 @@
 }
 
 .area-btn-slide{
-    background-color: rgba(0, 0, 0, .6);
+    background-color: red;
     position: absolute;
     top: 0;
     height: 100%;
@@ -54,8 +59,15 @@
     justify-content: center;
     align-items: center;
     z-index: 99;
-    padding: 0 8px;
+    padding: 0 6px;
     cursor: pointer;
+    height: 0px;
+    overflow: hidden;
+    width: 60px;
+}
+
+.area-btn-slide:hover svg{
+    font-size: 60px;
 }
 
 .area-btn-voltar{
@@ -69,4 +81,5 @@
 .btn-voltar, .btn-avancar{
     font-size: 40px;
     font-weight: 700;
+    transition: all .5s;
 }

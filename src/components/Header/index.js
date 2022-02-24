@@ -14,11 +14,11 @@ export default function Header(){
     const areaConfig = useRef(null);
     let avatar = null;
     let usuariosInativos = [];
+    const [controleScroll, setControleScroll] = useState(false);
 
     useEffect(() => {
         function pegarIndexAtivo(){
             usuarios.map((item, key) => {
-                console.log(key);
                 if(item.id === ativo)
                     setIndexAtivo(key);
             });
@@ -39,7 +39,7 @@ export default function Header(){
         perfilAtivo.current.addEventListener('mouseleave', () => {
             intervaloPerfil = setTimeout(() => {
                 areaConfig.current.style.height = '0px';
-            }, 1000);
+            }, 700);
         });
 
         areaConfig.current.addEventListener('mouseover', () => {
@@ -50,7 +50,17 @@ export default function Header(){
         areaConfig.current.addEventListener('mouseleave', () => {
             intervaloConfig = setTimeout(() => {
                 areaConfig.current.style.height = '0px';
-            }, 1000);
+            }, 700);
+        });
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 400){
+                setControleScroll(true);
+            }else{
+                setControleScroll(false);
+            }
         });
     }, []);
 
@@ -58,11 +68,10 @@ export default function Header(){
         avatar = usuarios[indexAtivo].avatar;
 
         usuariosInativos = usuarios.filter((item, key) => {return key !== indexAtivo});
-        console.log(usuariosInativos);
     }
 
     return(
-        <header className='header-principal container'>
+        <header className={controleScroll ? 'header-principal header-principal-fixo container' : 'header-principal container'}>
             <div className='header-principal--area-navegacao'>
                 <div className='header-principal--logo'>
                     <Link to='/'>
@@ -102,7 +111,6 @@ export default function Header(){
                             <span>Gerenciar perfis</span>
                         </div>
                         <hr/>
-
                     </div>
                 </div>
             </div>

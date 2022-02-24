@@ -1,0 +1,15 @@
+    /*useEffect(() => {
+        function escolherMidiaRandom(){
+            //console.log('tamanho lista: ' + midias.length);
+            
+            let indice = Math.round(Math.random() * (midias.length - 0) + 0);
+
+            console.log(indice);
+
+            midiaRandom = midias[indice];
+        }
+
+        escolherMidiaRandom();
+
+        console.log(midiaRandom.length);
+    }, [midiaRandom]);*/

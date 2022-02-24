@@ -4,6 +4,16 @@
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: transparent;
+    z-index: 999;
+}
+
+.header-principal-fixo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
 }
 
 .header-principal--area-navegacao{
