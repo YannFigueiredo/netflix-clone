@@ -7,8 +7,10 @@ export const MidiasContext = createContext({});
 export default function MidiasProvider({children}){
     const [urlBase, setUrlBase] = useState('https://api.themoviedb.org/3');
     const [listas, setLista] = useState([]);
+    const [generos, setGeneros] = useState([]);
     const [loading, setLoading] = useState(true);
     let listaTemp = [];
+    let generosTemp = [];
 
     useEffect(() => {
       async function loadApi(){
@@ -93,6 +95,25 @@ export default function MidiasProvider({children}){
           listaTemp.push({titulo: 'Animação', label: 'Animation', itens: filmesAnimacao.data.results.concat(seriesAnimacao.data.results)});
   
         setLista(listaTemp);
+
+        //Carregando genêros
+        const generosSeries = await apiMidias.get(urlBase + '/genre/tv/list', {
+          params: {
+            api_key: '6d7eca4cdb083ab58f531783d27d25fc',
+            language: 'pt-br'
+          }
+        });
+
+        const generosFilmes = await apiMidias.get(urlBase + '/genre/movie/list', {
+          params: {
+            api_key: '6d7eca4cdb083ab58f531783d27d25fc',
+            language: 'pt-br'
+          }
+        });
+
+        generosTemp.push(generosSeries.data.genres.concat(generosFilmes.data.genres));
+
+        setGeneros(generosTemp);
       }
   
       loadApi();
@@ -106,7 +127,7 @@ export default function MidiasProvider({children}){
         );
     }else{
         return(
-            <MidiasContext.Provider value={{listas, urlBase}}>
+            <MidiasContext.Provider value={{listas, generos, urlBase}}>
                 {children}
             </MidiasContext.Provider>
         );

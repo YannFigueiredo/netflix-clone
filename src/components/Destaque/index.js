@@ -7,7 +7,7 @@ export default function Destaque(){
     const [ midiasPopulares, setMidiasPopulares ] = useState([]);
     const [ loading, setLoading ] = useState(true);
     //const [ midiaRandom, setMidiaRandom ] = useState();
-    const { listas } = useContext(MidiasContext);
+    const { listas, generos } = useContext(MidiasContext);
     let listaTemp = []
     let midiaRandom = null;
     const containerMidia = useRef(null);
@@ -25,7 +25,20 @@ export default function Destaque(){
         return anoMidia.getFullYear();
     };
 
-    //console.log('tamanho da lista de midias (fora do use effect): ' + listas.length);
+    const pegarGeneroMidia = () => {
+        let listaGeneros = [];
+
+        generos[0].map(genero => {
+            midiaRandom.genre_ids.map(item => {
+                if(genero.id === item)
+                    listaGeneros.push(genero.name);
+            });
+        });
+        //console.log('generos:');
+        console.log(listaGeneros);
+
+        return listaGeneros;
+    };
 
     function criarListaMidias(){
         listas.map((item, key) => {
@@ -55,8 +68,20 @@ export default function Destaque(){
         nomeMidia.current.textContent = typeof(midiaRandom.title) !== 'string' ? midiaRandom.name : midiaRandom.title;
         notaMidia.current.textContent = midiaRandom.vote_average + ' pontos | ';
         lancamentoMidia.current.textContent = pegarAnoMidia();
-        //generoMidia.current.textContent = pegarGenerosMidia;
-    }, [midiasPopulares]);
+
+        //Coletando genêros da mídia
+        let listaGeneros = await pegarGeneroMidia();
+        let conteudoGenero = '';
+
+        listaGeneros.map((item, key) => {
+            conteudoGenero += item;
+            
+            if(key < generos.length)
+                conteudoGenero += ', ';
+        });
+
+        generoMidia.current.textContent = 'Genêros: ' + conteudoGenero;
+    }, [midiasPopulares, generos]);
 
     if(loading === true){
         return(<Loading/>);

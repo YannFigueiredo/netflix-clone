@@ -23,6 +23,10 @@
     color: green;
 }
 
+.destaque--genero{
+    margin-top: 15px;
+}
+
 .destaque--divisoria{
     height: 150px;
     background-image: linear-gradient(to top, black 30%, transparent 70%);
