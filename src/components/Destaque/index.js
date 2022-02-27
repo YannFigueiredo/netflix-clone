@@ -62,14 +62,18 @@ export default function Destaque(){
         return(<Loading/>);
     }else{
         return(
-            <section className='destaque' ref={containerMidia}>
-                <h1 className='destaque--titulo' ref={nomeMidia}></h1>
-                <div className='destaque--area-info' >
-                    <span className='destaque--nota' ref={notaMidia}></span>
-                    <span className='destaque--lancamento' ref={lancamentoMidia}></span>
-                </div>
-                <span className='destaque--genero' ref={generoMidia}></span>
-            </section>
+            <div>
+                <section className='destaque' ref={containerMidia}>
+                    <h1 className='destaque--titulo' ref={nomeMidia}></h1>
+                    <div className='destaque--area-info' >
+                        <span className='destaque--nota' ref={notaMidia}></span>
+                        <span className='destaque--lancamento' ref={lancamentoMidia}></span>
+                    </div>
+                    <span className='destaque--genero' ref={generoMidia}></span>
+                </section>
+                <div className='destaque--divisoria'></div>
+            </div>
+
         );
     }
 }

@@ -23,3 +23,9 @@
     color: green;
 }
 
+.destaque--divisoria{
+    height: 150px;
+    background-image: linear-gradient(to top, black 30%, transparent 70%);
+    margin-top: -90px;
+}
+
