@@ -97,20 +97,23 @@ export default function Header(){
                         <MdOutlineArrowDropDown className='header-principal--btn-expandir'/>
                     </div>
                     <div className='header-principal--config' ref={areaConfig}>
-                        <div style={{backgroundColor: 'transparent', textAlign: 'right'}}><MdOutlineArrowDropUp style={{fontSize: '2.2em', color: 'white', marginRight: '21px'}}/></div>
-                        {usuariosInativos.map((item, key) => (
-                            <div key={key} className='header-principal--perfil-inativo'>
-                                <div className='header-principal--avatar-perfil'>
-                                    <img src={item.avatar} alt='Avatar de perfil inativo'/>
+                        <div style={{backgroundColor: 'transparent', textAlign: 'right'}}><MdOutlineArrowDropUp style={
+                        {fontSize: '2.2em', color: 'white', marginRight: '21px'}}/></div>
+                        <div className='header-principal--area-config'>
+                            {usuariosInativos.map((item, key) => (
+                                <div key={key} className='header-principal--perfil-inativo'>
+                                    <div className='header-principal--avatar-perfil'>
+                                        <img src={item.avatar} alt='Avatar de perfil inativo'/>
+                                    </div>
+                                    <span>{item.nome}</span>
                                 </div>
-                                <span>{item.nome}</span>
+                            ))}
+                            <div className='header-principal--gerenciar-perfil'>
+                                <BsPencil className='header-principal--btn-gerenciar'/>
+                                <span>Gerenciar perfis</span>
                             </div>
-                        ))}
-                        <div className='header-principal--gerenciar-perfil'>
-                            <BsPencil className='header-principal--btn-gerenciar'/>
-                            <span>Gerenciar perfis</span>
+                            <hr/>
                         </div>
-                        <hr/>
                     </div>
                 </div>
             </div>

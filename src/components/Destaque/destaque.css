@@ -1,15 +1,25 @@
-    /*useEffect(() => {
-        function escolherMidiaRandom(){
-            //console.log('tamanho lista: ' + midias.length);
-            
-            let indice = Math.round(Math.random() * (midias.length - 0) + 0);
+.destaque{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    background-color: linear-gradient(to right, black , red);
+}
 
-            console.log(indice);
+.destaque--titulo{
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    font-weight: 700;
+    display: inline-block;
+    width: 500px;
+}
 
-            midiaRandom = midias[indice];
-        }
+.destaque--area-info{
+    font-size: 1.2em;
+}
 
-        escolherMidiaRandom();
+.destaque--nota{
+    color: green;
+}
 
-        console.log(midiaRandom.length);
-    }, [midiaRandom]);*/

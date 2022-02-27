@@ -1,6 +1,6 @@
 import './lista-midias.css';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 export default function ListaMidias({ lista }){
     const areaMidia = useRef(null);
@@ -20,7 +20,7 @@ export default function ListaMidias({ lista }){
     };
 
     return(
-        <section className="lista-midias">
+        <section className="lista-midias container">
             <h1 className="lista-midias--titulo">{lista.titulo}</h1>
             <div className='container-auxiliar'>
                 <div className="lista-midias--area-midia" ref={areaMidia}>
