@@ -18,6 +18,7 @@ export default function Destaque(){
     const selecionarMidiaRandom = () => {
         return Math.ceil(Math.random() * (midiasPopulares.length - 0) + 0);
     };
+
     const pegarAnoMidia = () => {
         let dataMidia = typeof(midiaRandom.release_date) !== 'string' ? midiaRandom.first_air_date : midiaRandom.release_date;
         let anoMidia = new Date(dataMidia);
@@ -34,8 +35,6 @@ export default function Destaque(){
                     listaGeneros.push(genero.name);
             });
         });
-        //console.log('generos:');
-        console.log(listaGeneros);
 
         return listaGeneros;
     };
@@ -66,17 +65,18 @@ export default function Destaque(){
         containerMidia.current.style.backgroundSize = 'cover';
 
         nomeMidia.current.textContent = typeof(midiaRandom.title) !== 'string' ? midiaRandom.name : midiaRandom.title;
-        notaMidia.current.textContent = midiaRandom.vote_average + ' pontos | ';
-        lancamentoMidia.current.textContent = pegarAnoMidia();
+        notaMidia.current.textContent = midiaRandom.vote_average + ' pontos ';
+        lancamentoMidia.current.textContent = '| ' + pegarAnoMidia();
 
         //Coletando genêros da mídia
         let listaGeneros = await pegarGeneroMidia();
+        listaGeneros = [...new Set(listaGeneros)]; //Remove elementos repetidos do array
         let conteudoGenero = '';
 
         listaGeneros.map((item, key) => {
             conteudoGenero += item;
             
-            if(key < generos.length)
+            if(key < listaGeneros.length - 1)
                 conteudoGenero += ', ';
         });
 
