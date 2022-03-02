@@ -6,15 +6,16 @@ import Loading from '../../components/Loading';
 export default function Destaque(){
     const [ midiasPopulares, setMidiasPopulares ] = useState([]);
     const [ loading, setLoading ] = useState(true);
-    //const [ midiaRandom, setMidiaRandom ] = useState();
+    const [ midiaRandom, setMidiaRandom ] = useState();
     const { listas, generos } = useContext(MidiasContext);
     let listaTemp = []
-    let midiaRandom = null;
+    //let midiaRandom = null;
     const containerMidia = useRef(null);
     const nomeMidia = useRef(null);
     const notaMidia = useRef(null);
     const lancamentoMidia = useRef(null);
     const generoMidia = useRef(null);
+    
     const selecionarMidiaRandom = () => {
         return Math.ceil(Math.random() * (midiasPopulares.length - 0) + 0);
     };
@@ -52,12 +53,13 @@ export default function Destaque(){
     useEffect(async() => {
         await criarListaMidias();
         await setMidiasPopulares(listaTemp);
-        
+
         setLoading(false);
     }, [listas]);
 
     useEffect(async () => {
-        midiaRandom = await midiasPopulares[selecionarMidiaRandom()];
+        //midiaRandom = await midiasPopulares[selecionarMidiaRandom()];
+        setMidiaRandom(await midiasPopulares[selecionarMidiaRandom()]);
 
         //Configurando div principal
         containerMidia.current.style.backgroundImage = `linear-gradient(to right, black 25% , transparent 75%), url(http://image.tmdb.org/t/p/original${midiaRandom.backdrop_path})`;
@@ -72,6 +74,7 @@ export default function Destaque(){
         let listaGeneros = await pegarGeneroMidia();
         listaGeneros = [...new Set(listaGeneros)]; //Remove elementos repetidos do array
         let conteudoGenero = '';
+        let labelGeneros = listaGeneros.length > 1 ? 'Genêros: ' : 'Genêro: ';
 
         listaGeneros.map((item, key) => {
             conteudoGenero += item;
@@ -80,7 +83,7 @@ export default function Destaque(){
                 conteudoGenero += ', ';
         });
 
-        generoMidia.current.textContent = 'Genêros: ' + conteudoGenero;
+        generoMidia.current.textContent = labelGeneros + conteudoGenero;
     }, [midiasPopulares, generos]);
 
     if(loading === true){

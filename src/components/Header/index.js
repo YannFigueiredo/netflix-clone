@@ -5,6 +5,7 @@ import { UsuariosContext } from '../../contexts/Usuarios';
 import './header.css';
 import { MdOutlineArrowDropUp, MdOutlineArrowDropDown } from 'react-icons/md';
 import { BsPencil } from 'react-icons/bs';
+import Menu from '../Menu';
 
 export default function Header(){
     const { usuarios, ativo, setAtivo } = useContext(UsuariosContext);
@@ -78,15 +79,7 @@ export default function Header(){
                      <img src={logo} alt='Logo do site'/>
                     </Link>
                 </div>
-                <nav className='header-principal--area-menu'>
-                    <ul className="header-principal--menu">
-                        <li><a href='/'>Início</a></li>
-                        <li><a href='#'>Séries</a></li>
-                        <li><a href='#'>Filmes</a></li>
-                        <li><a href='#'>Bombando</a></li>
-                        <li><a href='#'>Minha lista</a></li>
-                    </ul>
-                </nav>
+                <Menu/>
             </div>
             <div className='header-principal--area-infos'>
                 <div className='header-principal--perfis'>

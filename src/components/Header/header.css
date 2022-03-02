@@ -33,27 +33,6 @@
     width: 100%;
 }
 
-.header-principal--menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 400px;
-}
-
-.header-principal--menu a{
-    text-decoration: none;
-    color: white;
-    transition: all ease .4s;
-}
-
-.header-principal--menu a:hover{
-    color: rgb(206, 203, 203);
-}
-
-.header-principal--menu li{
-    list-style-type: none;
-}
-
 .header-principal--area-infos{
     display: flex;
     font-size: 0.9em;
@@ -139,4 +118,11 @@
 .header-principal--btn-gerenciar{
     margin-right: 15px;
     font-size: 1.4em;
+}
+
+@media screen and (max-width: 768px){
+    .header-principal--logo{
+        width: 90px;
+        margin-right: 40px;
+    }
 }

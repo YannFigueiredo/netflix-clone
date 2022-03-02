@@ -33,3 +33,10 @@
     margin-top: -90px;
 }
 
+@media screen and (max-width: 768px){
+    .destaque--titulo{
+        font-size: 2em;
+        width: 350px;
+    }
+}
+
