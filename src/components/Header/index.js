@@ -17,6 +17,14 @@ export default function Header(){
     let usuariosInativos = [];
     const [controleScroll, setControleScroll] = useState(false);
 
+    const toggleConfig = () => {
+        if(areaConfig.current.style.height === '0px'){
+            areaConfig.current.style.height = 'auto';
+        }else{
+            areaConfig.current.style.height = '0px';
+        }
+    };
+
     useEffect(() => {
         function pegarIndexAtivo(){
             usuarios.map((item, key) => {
@@ -83,7 +91,7 @@ export default function Header(){
             </div>
             <div className='header-principal--area-infos'>
                 <div className='header-principal--perfis'>
-                    <div className='header-principal--perfil-ativo' ref={perfilAtivo}>
+                    <div className='header-principal--perfil-ativo' ref={perfilAtivo} onClick={()=>{toggleConfig()}}>
                         <div className='header-principal--avatar-perfil'>
                             <img src={avatar} alt='Avatar do perfil ativo'/>
                         </div>

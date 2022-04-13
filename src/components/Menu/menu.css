@@ -43,10 +43,6 @@
         align-items: center;
     }
 
-    .header-principal--btn-menu-mobile:hover ~ .header-principal--container-menu{
-        display: flex;
-    }
-
     .header-principal--container-menu:hover{
         display: flex;
     }
