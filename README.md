@@ -21,7 +21,7 @@ Netflix Clone é um projeto baseado no design da Netflix, sendo implementada uma
 - Linguagens: HTML / CSS / JavaScript
 - Frameworks: ReactJS
 - Bibliotecas: Axios / React Hooks / React Router Dom / React Icons / Context API
-- API: TheMovieDB (https://api.themoviedb.org/3)
+- API: TheMovieDB (https://www.themoviedb.org/documentation/api)
 - Versionamento: Git / Github
 
 # Implantação em produção
